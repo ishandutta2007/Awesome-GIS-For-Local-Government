@@ -54,7 +54,7 @@ Welcome to the premier curated list of **Geospatial Information Systems (GIS) fo
 
 ## 🔓 Open-Source GitHub Projects
 
-> 🌟 *Open-source software powers the core infrastructure of modern municipal GIS worldwide. Star count badges link directly to each repository's stargazers page.*
+> 🌟 *Open-source software powers the core infrastructure of modern municipal GIS worldwide. Stars_Count badges link directly to each repository's stargazers page.*
 
 | Open-Source Project 🛠️ | Popularity & Stargazers ⭐️ | Core Description & Local Government Applications 🚀 |
 | :--- | :--- | :--- |
@@ -105,7 +105,7 @@ Contributions are warmly welcomed! Help keep this directory accurate and compreh
 
 1. 🍴 **Fork** this repository.
 2. 📝 **Add or update** entries in `README.md` following the tabular formats above.
-3. 🔗 Include official URLs, factual descriptions, pricing tiers, and open-source star badges.
+3. 🔗 Include official URLs, factual descriptions, pricing tiers, and open-source Stars_Badges.
 4. 📬 Submit a **Pull Request** with a concise description of your changes.
 
 ---
