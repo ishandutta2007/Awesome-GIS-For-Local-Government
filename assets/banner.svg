@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="50%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#090d16" />
+    </linearGradient>
+
+    <!-- Grid Pattern for Map/GIS theme -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#334155" stroke-width="0.5" stroke-opacity="0.6" />
+      <circle cx="40" cy="40" r="1.5" fill="#38bdf8" fill-opacity="0.4" />
+    </pattern>
+
+    <!-- Gradient for Dynamic Topo Lines -->
+    <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.8" />
+      <stop offset="50%" stop-color="#818cf8" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#c084fc" stop-opacity="0.8" />
+    </linearGradient>
+  </defs>
+
+  <style>
+    .title { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-weight: 800; font-size: 46px; fill: #ffffff; }
+    .subtitle { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-weight: 500; font-size: 20px; fill: #94a3b8; }
+    .badge-text { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-weight: 600; font-size: 13px; fill: #38bdf8; }
+    
+    /* Subtle Animations for Dynamic Map Features */
+    @keyframes pulsePoint {
+      0% { r: 4px; opacity: 0.9; }
+      50% { r: 12px; opacity: 0.2; }
+      100% { r: 4px; opacity: 0.9; }
+    }
+    @keyframes dashMove {
+      to { stroke-dashoffset: -40; }
+    }
+    @keyframes waveFloat {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+      100% { transform: translateY(0px); }
+    }
+
+    .pulsing-ring { animation: pulsePoint 3s infinite ease-in-out; }
+    .dash-flow { stroke-dasharray: 8 6; animation: dashMove 2s linear infinite; }
+    .wave-bg { animation: waveFloat 6s ease-in-out infinite; }
+  </style>
+
+  <!-- Base Layer -->
+  <rect width="1200" height="320" fill="url(#bgGrad)" rx="12" />
+  <rect width="1200" height="320" fill="url(#grid)" rx="12" />
+
+  <!-- Animated Dynamic Background GIS Contours/Waves (Behind Text) -->
+  <g class="wave-bg" opacity="0.35">
+    <!-- Topographic Contour Lines -->
+    <path d="M -50 220 Q 200 300 450 200 T 950 250 T 1250 180" fill="none" stroke="url(#lineGrad)" stroke-width="2" />
+    <path d="M -50 250 Q 250 180 550 260 T 1050 200 T 1250 240" fill="none" stroke="url(#lineGrad)" stroke-width="1.5" />
+    <path d="M -50 280 Q 300 240 650 290 T 1150 230 T 1250 270" fill="none" stroke="url(#lineGrad)" stroke-width="1" />
+  </g>
+
+  <!-- Network Routes / Spatial Flight Paths -->
+  <path class="dash-flow" d="M 150 260 Q 400 100 750 250 T 1100 120" fill="none" stroke="#38bdf8" stroke-width="2" opacity="0.5" />
+  <path class="dash-flow" d="M 100 120 Q 500 280 850 140 T 1150 220" fill="none" stroke="#818cf8" stroke-width="1.5" opacity="0.4" />
+
+  <!-- Interactive/Dynamic Map Nodes & Pulses (Background / Decorative) -->
+  <g opacity="0.7">
+    <!-- Node 1 -->
+    <circle cx="750" cy="250" r="10" fill="#38bdf8" fill-opacity="0.15" />
+    <circle class="pulsing-ring" cx="750" cy="250" r="6" fill="none" stroke="#38bdf8" stroke-width="2" />
+    <circle cx="750" cy="250" r="3" fill="#38bdf8" />
+
+    <!-- Node 2 -->
+    <circle cx="400" cy="100" r="10" fill="#818cf8" fill-opacity="0.15" />
+    <circle class="pulsing-ring" cx="400" cy="100" r="6" fill="none" stroke="#818cf8" stroke-width="2" style="animation-delay: 1s;" />
+    <circle cx="400" cy="100" r="3" fill="#818cf8" />
+
+    <!-- Node 3 -->
+    <circle cx="1100" cy="120" r="10" fill="#c084fc" fill-opacity="0.15" />
+    <circle class="pulsing-ring" cx="1100" cy="120" r="6" fill="none" stroke="#c084fc" stroke-width="2" style="animation-delay: 2s;" />
+    <circle cx="1100" cy="120" r="3" fill="#c084fc" />
+  </g>
+
+  <!-- Foreground Content Block (Ensures High Contrast & Readability) -->
+  <g transform="translate(60, 0)">
+    <!-- Pill Badge -->
+    <rect x="0" y="52" width="290" height="32" rx="16" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5" stroke-opacity="0.6" />
+    <circle cx="20" cy="68" r="5" fill="#38bdf8" />
+    <text x="34" y="73" class="badge-text">LOCAL GOVERNMENT &amp; MUNICIPAL GIS</text>
+
+    <!-- Main Title -->
+    <text x="0" y="145" class="title">Awesome GIS For Local Government</text>
+
+    <!-- Subtitle -->
+    <text x="0" y="192" class="subtitle">Curated Municipal Mapping, Spatial Analysis &amp; Open-Source Web GIS Ecosystem</text>
+
+    <!-- Tech Tag Pills -->
+    <g transform="translate(0, 225)">
+      <!-- Tag 1 -->
+      <rect x="0" y="0" width="110" height="28" rx="6" fill="#334155" fill-opacity="0.8" />
+      <text x="55" y="18" font-family="sans-serif" font-size="12" font-weight="600" fill="#e2e8f0" text-anchor="middle">🗺️ QGIS &amp; Esri</text>
+
+      <!-- Tag 2 -->
+      <rect x="120" y="0" width="105" height="28" rx="6" fill="#334155" fill-opacity="0.8" />
+      <text x="172" y="18" font-family="sans-serif" font-size="12" font-weight="600" fill="#e2e8f0" text-anchor="middle">🐘 PostGIS</text>
+
+      <!-- Tag 3 -->
+      <rect x="235" y="0" width="115" height="28" rx="6" fill="#334155" fill-opacity="0.8" />
+      <text x="292" y="18" font-family="sans-serif" font-size="12" font-weight="600" fill="#e2e8f0" text-anchor="middle">🌐 MapLibre GL</text>
+
+      <!-- Tag 4 -->
+      <rect x="360" y="0" width="125" height="28" rx="6" fill="#334155" fill-opacity="0.8" />
+      <text x="422" y="18" font-family="sans-serif" font-size="12" font-weight="600" fill="#e2e8f0" text-anchor="middle">🌍 GeoServer</text>
+    </g>
+  </g>
+</svg>
